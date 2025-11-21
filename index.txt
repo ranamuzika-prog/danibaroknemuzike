@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Days of Baroque Music – Novi Sad</title>
+
+  <style>
+    /* ---------- BASIC RESET ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #222;
+      background: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: #444;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .lang-button {
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      padding: 3px 10px;
+      cursor: pointer;
+      background: #f7f7f7;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .lang-button.active {
+      background: #222;
+      color: #fff;
+      border-color: #222;
+    }
+
+    main {
+      margin-top: 64px; /* space for fixed header */
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      text-align: left;
+      background-image: url("background-novi-sad.jpg"); /* TODO: replace with your image file */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      padding: 80px 20px 80px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3.1vw, 2.6rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .hero-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 42rem;
+      margin-bottom: 16px;
+    }
+
+    .hero-status {
+      font-size: 0.98rem;
+      margin-top: 10px;
+      padding-left: 10px;
+      border-left: 2px solid #aaa;
+      color: #444;
+    }
+
+    .hero-buttons {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: #111;
+      color: #fff;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      text-decoration: none;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      color: #111;
+    }
+
+    .primary-btn:hover {
+      background: #000;
+    }
+
+    .secondary-btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* ---------- SECTION STYLES ---------- */
+    .section-title {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+    }
+
+    .section-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 52rem;
+      color: #333;
+    }
+
+    .section-text p + p {
+      margin-top: 10px;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Three-column info block */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .info-card {
+      border-radius: 18px;
+      border: 1px solid #eee;
+      padding: 18px 18px 20px;
+      background: #fafafa;
+    }
+
+    .info-card-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .info-card-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Previous editions */
+    .year-block {
+      border-top: 1px solid #eee;
+      padding-top: 24px;
+      margin-top: 32px;
+    }
+
+    .year-title {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+    }
+
+    .year-text {
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .concert-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .concert-list li::before {
+      content: "• ";
+      color: #999;
+    }
+
+    .concert-list li + li {
+      margin-top: 4px;
+    }
+
+    /* Contact */
+    .contact-details p + p {
+      margin-top: 6px;
+    }
+
+    footer {
+      border-top: 1px solid #eee;
+      padding: 18px 20px 22px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    /* ---------- LANGUAGE HANDLING ---------- */
+    .lang {
+      display: none;
+    }
+
+    html[data-lang="en"] .lang-en {
+      display: inline;
+    }
+
+    html[data-lang="sr"] .lang-sr {
+      display: inline;
+    }
+
+    /* For block elements where we use lang spans inside, allow them to wrap */
+    .lang-block {
+      display: block;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none; /* simple: hide menu on very small screens, hero anchors still work via scroll */
+      }
+
+      .nav-container {
+        justify-content: space-between;
+      }
+
+      .hero-content {
+        padding: 70px 20px 60px;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <span class="lang lang-en">Days of Baroque Music</span>
+        <span class="lang lang-sr">Dani barokne muzike</span>
+      </div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#home">
+            <span class="lang lang-en">Home</span>
+            <span class="lang lang-sr">Početna</span>
+          </a>
+        </li>
+        <li>
+          <a href="#festival">
+          <span class="lang lang-en">Festival</span>
+          <span class="lang lang-sr">Festival</span>
+          </a>
+        </li>
+        <li>
+          <a href="#previous">
+            <span class="lang lang-en">Previous editions</span>
+            <span class="lang lang-sr">Prethodna izdanja</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="lang lang-en">Contact</span>
+            <span class="lang lang-sr">Kontakt</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="lang-switcher">
+        <button class="lang-button active" data-lang="en">EN</button>
+        <button class="lang-button" data-lang="sr">SRB 🇷🇸</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="lang lang-en">Days of Baroque Music – Novi Sad</span>
+          <span class="lang lang-sr">Dani barokne muzike – Novi Sad</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="lang lang-en">Early music festival in the heart of Vojvodina</span>
+          <span class="lang lang-sr">Festival rane muzike u srcu Vojvodine</span>
+        </p>
+
+        <div class="hero-text lang-block">
+          <span class="lang lang-en">
+            Days of Baroque Music (Dani barokne muzike) is the first festival in Vojvodina
+            dedicated to historically informed performance of early music. Each autumn, we bring
+            together musicians, students and audiences to rediscover Renaissance and Baroque
+            repertoire in Novi Sad.
+          </span>
+          <span class="lang lang-sr">
+            Dani barokne muzike je prvi festival u Vojvodini posvećen istorijski informisanom
+            izvođenju rane muzike. Svake jeseni okupljamo umetnike, studente i publiku kako bismo
+            zajedno ponovo otkrivali renesansni i barokni repertoar u Novom Sadu.
+          </span>
+        </div>
+
+        <p class="hero-status lang-block">
+          <span class="lang lang-en">
+            We are currently working on the programme for the next edition of the festival.
+            Full details will be announced soon.
+          </span>
+          <span class="lang lang-sr">
+            Trenutno radimo na programu sledećeg izdanja festivala.
+            Detaljan program biće objavljen uskoro.
+          </span>
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#previous" class="primary-btn">
+            <span class="lang lang-en">Explore previous editions</span>
+            <span class="lang lang-sr">Pogledaj prethodna izdanja</span>
+          </a>
+          <a href="#festival" class="secondary-btn">
+            <span class="lang lang-en">About the festival</span>
+            <span class="lang lang-sr">O festivalu</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FESTIVAL SECTION -->
+    <section id="festival">
+      <div class="section-inner">
+        <h2 class="section-title">
+          <span class="lang lang-en">Festival</span>
+          <span class="lang lang-sr">Festival</span>
+        </h2>
+
+        <div class="section-text lang-block">
+          <span class="lang lang-en">
+            Days of Baroque Music (Dani barokne muzike) is an early music festival founded in Novi Sad, Serbia.
+            The festival is dedicated to Renaissance and Baroque repertoire and to historically informed
+            performance practice.
+          </span>
+          <span class="lang lang-sr">
+            Dani barokne muzike je festival rane muzike osnovan u Novom Sadu. Festival je posvećen
+            renesansnom i baroknom repertoaru i istorijski informisanom izvođenju.
+          </span>
+        </div>
+
+        <div class="section-text lang-block" style="margin-top: 12px;">
+          <span class="lang lang-en">
+            Through concerts, a baroque academy and special projects, the festival creates a meeting
+            point for international artists, regional ensembles, students and local audiences.
+            Our aim is to build a sustainable early music scene in Vojvodina and to open Novi Sad
+            towards European cultural networks.
+          </span>
+          <span class="lang lang-sr">
+            Kroz koncerte, baroknu akademiju i posebne projekte, festival postaje mesto susreta
+            međunarodnih umetnika, regionalnih ansambala, studenata i lokalne publike. Naš cilj
+            je da izgradimo održivu scenu rane muzike u Vojvodini i da otvorimo Novi Sad ka
+            evropskim kulturnim mrežama.
+          </span>
+        </div>
+
+        <div class="grid-3">
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <span class="lang lang-en">Festival concerts</span>
+              <span class="lang lang-sr">Festivalski koncerti</span>
+            </h3>
+            <p class="info-card-text lang-block">
+              <span class="lang lang-en">
+                Carefully curated programmes of Renaissance and Baroque music with period instruments
+                and specialised ensembles.
+              </span>
+              <span class="lang lang-sr">
+                Pažljivo osmišljeni programi renesansne i barokne muzike na istorijskim instrumentima
+                i sa specijalizovanim ansamblima.
+              </span>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <span class="lang lang-en">Baroque Academy</span>
+              <span class="lang lang-sr">Barokna akademija</span>
+            </h3>
+            <p class="info-ca
