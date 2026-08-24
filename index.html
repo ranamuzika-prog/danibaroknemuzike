@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Days of Baroque Music – Novi Sad</title>
+  <title>Dani barokne muzike 2026 | Novi Sad</title>
+  <meta name="description" content="11. Dani barokne muzike u Novom Sadu, 2–14. oktobar 2026. Program koncerata, umetnici, Novosadska barokna akademija i događaji posvećeni istorijski informisanom izvođenju rane muzike." />
+  <meta property="og:title" content="Dani barokne muzike 2026 | Novi Sad" />
+  <meta property="og:description" content="11. Dani barokne muzike u Novom Sadu, 2–14. oktobar 2026. Program koncerata, umetnici, Novosadska barokna akademija i događaji posvećeni istorijski informisanom izvođenju rane muzike." />
+  <meta property="og:image" content="festival-1.jpg" />
 <link rel="icon" type="image/png" href="favicon_round.png">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -179,7 +185,7 @@ a:hover {
   justify-content: center;
   color: #111;
   text-align: left;
-  background: #ffffff; /* clean, elegant, no image */
+  background: #f6f1e7;
 }
 
 .hero-content {
@@ -355,6 +361,72 @@ a:hover {
       margin-top: 4px;
     }
 
+    .program-intro {
+      max-width: 42rem;
+      margin-bottom: 30px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .program-card {
+      min-height: 242px;
+      border-radius: 18px;
+      border: 1px solid #eee;
+      padding: 20px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .program-date {
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .program-artist {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .program-title {
+      font-size: 1.08rem;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .program-details,
+    .program-location {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #444;
+    }
+
+    .program-location {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .artists-list {
+      columns: 2;
+      column-gap: 40px;
+      margin-top: 22px;
+    }
+
+    .artists-list li {
+      break-inside: avoid;
+    }
+
     /* Festival photo gallery on main page */
 .festival-photos {
   margin-top: 32px;
@@ -397,6 +469,384 @@ a:hover {
       margin-top: 40px;
     }
 
+    /* ---------- 2026 EDITORIAL FESTIVAL IDENTITY ---------- */
+
+    html, body {
+      font-family: "Source Sans 3", "Helvetica Neue", sans-serif;
+      color: #2d2927;
+      background: #fcfcfa;
+    }
+
+    header {
+      background: rgba(252, 252, 250, 0.94);
+      border-bottom-color: #d7cfca;
+    }
+
+    .brand-title,
+    .section-title,
+    .info-card-title,
+    .year-title,
+    .hero-title,
+    .hero-subtitle,
+    .program-date,
+    .program-artist,
+    .program-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .brand-subtitle,
+    .muted,
+    .year-text,
+    .info-card-text,
+    .program-details,
+    .program-location {
+      color: #5b504b;
+    }
+
+    .nav-links {
+      gap: 20px;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a,
+    a {
+      color: #392a27;
+    }
+
+    .nav-links a::after {
+      background: #7d2634;
+    }
+
+    .lang-button {
+      border-color: #a79486;
+      border-radius: 0;
+      padding: 4px 9px;
+      background: transparent;
+    }
+
+    .lang-button.active {
+      background: #7d2634;
+      border-color: #7d2634;
+    }
+
+    .hero {
+      min-height: 74vh;
+      overflow: hidden;
+      background: #fdfdfb;
+    }
+
+    .hero::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 26%;
+      bottom: 0;
+      left: auto;
+      width: min(39vw, 455px);
+      background: url("renaissance-musician-watermark.png") center / contain no-repeat;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: none;
+    }
+
+    .hero-content {
+      width: min(1100px, 100%);
+      max-width: none;
+      margin: 0 auto;
+      padding: 100px 20px 90px;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 18px;
+      color: #7d2634;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-poster-slot {
+      position: absolute;
+      z-index: 0;
+      top: 50%;
+      right: max(7vw, 40px);
+      width: min(25vw, 290px);
+      aspect-ratio: 0.7;
+      transform: translateY(-50%);
+      border: 1px solid rgba(125, 38, 52, 0.38);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .hero-poster-slot::before,
+    .hero-poster-slot::after {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border: 1px solid rgba(125, 38, 52, 0.22);
+    }
+
+    .hero-poster-slot img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-poster-slot::after {
+      inset: 50% 14px auto;
+      border-width: 1px 0 0;
+    }
+
+    .hero-title {
+      max-width: 16ch;
+      color: #2d2927;
+      font-size: clamp(3.1rem, 6vw, 5.8rem);
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      line-height: 0.85;
+    }
+
+    .hero-subtitle {
+      max-width: 38rem;
+      margin: 22px 0 24px;
+      color: #7d2634;
+      font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    .hero-text,
+    .hero-status {
+      max-width: 34rem;
+      color: #443c38;
+    }
+
+    .hero-status {
+      margin-top: 18px;
+      padding-top: 14px;
+      padding-left: 0;
+      border-top: 1px solid #a79486;
+      border-left: 0;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      border-color: #7d2634;
+      border-radius: 0;
+      padding: 10px 16px;
+      background: #7d2634;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .secondary-btn {
+      background: transparent;
+      color: #7d2634;
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      background: #5f1825;
+      color: #fff;
+    }
+
+    .section-title {
+      color: #392a27;
+      font-size: clamp(2rem, 3.6vw, 3.25rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    .section-title::after {
+      content: "✦";
+      display: block;
+      margin-top: 10px;
+      color: #7d2634;
+      font-size: 0.9rem;
+    }
+
+    .section-text {
+      color: #443c38;
+    }
+
+    .info-card {
+      border: 0;
+      border-top: 1px solid #b9a99a;
+      border-radius: 0;
+      padding: 20px 0 0;
+      background: transparent;
+    }
+
+    .info-card-title {
+      font-size: 1.45rem;
+      letter-spacing: 0.03em;
+      text-transform: none;
+    }
+
+    .year-block {
+      border-top-color: #b9a99a;
+    }
+
+    .year-title {
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    .festival-photos {
+      grid-template-columns: 1.35fr 0.85fr 0.85fr;
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .festival-photos img {
+      height: 240px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #previous {
+      background: #f7f6f3;
+    }
+
+    .program-grid {
+      display: block;
+      border-top: 1px solid #7d2634;
+    }
+
+    .program-card {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) minmax(200px, 0.7fr);
+      column-gap: 24px;
+      min-height: 0;
+      padding: 27px 0 24px;
+      border: 0;
+      border-bottom: 1px solid #c9baaa;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .program-date {
+      margin: 0;
+      color: #7d2634;
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: none;
+    }
+
+    .program-artist {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      line-height: 1.08;
+      text-transform: none;
+    }
+
+    .program-copy {
+      display: grid;
+      gap: 7px;
+    }
+
+    .program-title {
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .program-details,
+    .program-location {
+      margin: 0;
+      padding: 0;
+      color: #5b504b;
+    }
+
+    .program-location {
+      align-self: end;
+      text-align: right;
+    }
+
+    .partner-section {
+      display: block;
+      background: #f7f6f3;
+    }
+
+    .partner-belt {
+      overflow: hidden;
+      padding: 22px 0;
+      border-top: 1px solid #b9a99a;
+      border-bottom: 1px solid #b9a99a;
+    }
+
+    .partner-track {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      width: max-content;
+      animation: partner-scroll 42s linear infinite;
+    }
+
+    .partner-set {
+      display: flex;
+      align-items: center;
+      gap: 52px;
+      padding-right: 52px;
+    }
+
+    .partner-belt:hover .partner-track {
+      animation-play-state: paused;
+    }
+
+    .partner-logo {
+      width: auto;
+      height: 44px;
+      max-width: 160px;
+      object-fit: contain;
+    }
+
+    .partner-mark {
+      min-width: max-content;
+      color: #5b504b;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .partner-mark strong {
+      color: #7d2634;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    @keyframes partner-scroll {
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .partner-track {
+        animation: none;
+      }
+    }
+
     /* ---------- LANGUAGE VISIBILITY ---------- */
 
     .lang {
@@ -437,8 +887,33 @@ a:hover {
         padding: 70px 20px 60px;
       }
 
+      .hero-poster-slot {
+        display: none;
+      }
+
       .grid-3 {
         grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .program-location {
+        text-align: left;
+      }
+
+      .festival-photos {
+        grid-template-columns: 1fr;
+      }
+
+      .artists-list {
+        columns: 1;
       }
     }
   </style>
@@ -476,6 +951,12 @@ a:hover {
           </a>
         </li>
         <li>
+          <a href="#program-2026">
+            <span class="lang lang-en">Programme 2026</span>
+            <span class="lang lang-sr">Program 2026</span>
+          </a>
+        </li>
+        <li>
           <a href="#previous">
             <span class="lang lang-en">Previous editions</span>
             <span class="lang lang-sr">Prethodna izdanja</span>
@@ -504,51 +985,51 @@ a:hover {
 
     <!-- HERO -->
     <section id="home" class="hero">
+      <div class="hero-poster-slot">
+        <img src="poster-website-2026.png" alt="Dani barokne muzike 2026 festival poster">
+      </div>
 
       <div class="hero-content">
+        <p class="hero-eyebrow">
+          <span class="lang lang-en">11th Early Music Festival</span>
+          <span class="lang lang-sr">11. festival rane muzike</span>
+        </p>
         <h1 class="hero-title">
-          <span class="lang lang-en">Days of Baroque Music – Novi Sad</span>
-          <span class="lang lang-sr">Dani barokne muzike – Novi Sad</span>
+          <span class="lang lang-en">Days of Baroque Music in Novi Sad</span>
+          <span class="lang lang-sr">Dani barokne muzike u Novom Sadu</span>
         </h1>
 
         <p class="hero-subtitle">
-          <span class="lang lang-en">Early music festival in the heart of Vojvodina</span>
-          <span class="lang lang-sr">Festival rane muzike u srcu Vojvodine</span>
+          <span class="lang lang-en">Crossroads</span>
+          <span class="lang lang-sr">Raskršća</span>
         </p>
 
         <div class="hero-text lang-block">
           <span class="lang lang-en">
-            Days of Baroque Music is the first festival in Vojvodina
-            dedicated to Historically Informed Performance of Early Music. Each autumn, we bring
-            together musicians, students and audiences to rediscover Medieval, Renaissance and Baroque
-            repertoire in Novi Sad.
+            Music from the Time of Cervantes
           </span>
           <span class="lang lang-sr">
-            Dani barokne muzike je prvi festival u Vojvodini posvećen istorijski informisanom
-            izvođenju rane muzike. Svake jeseni okupljamo umetnike, studente i publiku kako bismo
-            zajedno ponovo otkrivali renesansni i barokni repertoar u Novom Sadu.
+            Muzika iz vremena Servantesa
           </span>
         </div>
 
         <p class="hero-status lang-block">
           <span class="lang lang-en">
-            We are currently working on the programme for the next edition of the festival.
-            Full details will be announced soon.
+            2–14 October 2026
           </span>
           <span class="lang lang-sr">
-            Trenutno radimo na programu sledećeg izdanja festivala.
-            Detaljan program biće objavljen uskoro.
+            2–14. oktobar 2026.
           </span>
         </p>
 
         <div class="hero-buttons">
-          <a href="#previous" class="primary-btn">
-            <span class="lang lang-en">Explore previous editions</span>
-            <span class="lang lang-sr">Pogledaj prethodna izdanja</span>
+          <a href="#program-2026" class="primary-btn">
+            <span class="lang lang-en">Explore the 2026 programme</span>
+            <span class="lang lang-sr">Pogledaj program za 2026.</span>
           </a>
-          <a href="#festival" class="secondary-btn">
-            <span class="lang lang-en">About the festival</span>
-            <span class="lang lang-sr">O festivalu</span>
+          <a href="#previous" class="secondary-btn">
+            <span class="lang lang-en">Previous editions</span>
+            <span class="lang lang-sr">Prethodna izdanja</span>
           </a>
         </div>
       </div>
@@ -654,6 +1135,114 @@ a:hover {
            alt="Dani barokne muzike – festival photo 4">
       -->
     </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME 2026 -->
+    <section id="program-2026">
+      <div class="section-inner">
+        <h2 class="section-title">
+          <span class="lang lang-en">Programme 2026</span>
+          <span class="lang lang-sr">Program 2026</span>
+        </h2>
+
+        <p class="section-text program-intro lang-block">
+          <span class="lang lang-en">The 11th edition of Days of Baroque Music in Novi Sad, <em>Crossroads: Music from the time of Cervantes</em>, takes place from 2 to 14 October 2026.</span>
+          <span class="lang lang-sr">Jedanaesto izdanje Dana barokne muzike u Novom Sadu, <em>Raskršća: Muzika iz vremena Servantesa</em>, održava se od 2. do 14. oktobra 2026. godine.</span>
+        </p>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">2 October 2026</span><span class="lang lang-sr">2. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist">New Trinity Baroque &amp; Beogradska barokna akademija</h3>
+              <p class="program-title">George Frideric Handel: <em>Ariodante</em></p>
+              <p class="program-details lang-block"><span class="lang lang-en">Concert version<br>Conductor: Predrag Gosta</span><span class="lang lang-sr">Koncertna verzija<br>Dirigent: Predrag Gosta</span></p>
+            </div>
+            <p class="program-location lang-block"><span class="lang lang-en">Venue: to be announced</span><span class="lang lang-sr">Lokacija: biće objavljena</span></p>
+          </article>
+
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">3 October 2026</span><span class="lang lang-sr">3. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist">Gli Schiavoni <span class="lang lang-en">(Croatia)</span><span class="lang lang-sr">(Hrvatska)</span></h3>
+              <p class="program-title"><em>Canticum Canticorum</em></p>
+            </div>
+            <p class="program-location">Crkva Sv. Jurja, Petrovaradin</p>
+          </article>
+
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">7 October 2026</span><span class="lang lang-sr">7. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist">Rafael Arjona Ruz <span class="lang lang-en">(Spain)</span><span class="lang lang-sr">(Španija)</span></h3>
+              <p class="program-title"><span class="lang lang-en">Music from the Time of Cervantes</span><span class="lang lang-sr">Muzika iz vremena Servantesa</span></p>
+              <p class="program-details lang-block"><span class="lang lang-en">Vihuela and baroque guitar</span><span class="lang lang-sr">Vihuela i barokna gitara</span></p>
+            </div>
+            <p class="program-location lang-block"><span class="lang lang-en">Museum of Vojvodina, Novi Sad</span><span class="lang lang-sr">Muzej Vojvodine, Novi Sad</span></p>
+            <!-- TODO: Insert official AC/E / PICE visibility wording and official logo supplied by AC/E. -->
+          </article>
+
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">8 October 2026</span><span class="lang lang-sr">8. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist"><span class="lang lang-en">Baroque for the Youngest</span><span class="lang lang-sr">Barok za najmlađe</span></h3>
+              <p class="program-title">Musica Antiqua Neoplantensis / M.A.N.</p>
+              <p class="program-details lang-block"><span class="lang lang-en">Programme for children</span><span class="lang lang-sr">Program za decu</span></p>
+            </div>
+            <p class="program-location"><span class="lang lang-en">Dečiji kulturni centar Novi Sad</span><span class="lang lang-sr">Dečiji kulturni centar Novi Sad</span></p>
+          </article>
+
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">11 October 2026</span><span class="lang lang-sr">11. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist">Musica Antiqua Neoplantensis</h3>
+              <p class="program-title"><em>Affetti d’Amore</em></p>
+            </div>
+            <p class="program-location">Crkva Sv. Elizabete, Ćirila i Metodija 11, Telep, Novi Sad</p>
+          </article>
+
+          <article class="program-card">
+            <p class="program-date"><span class="lang lang-en">12–14 October 2026</span><span class="lang lang-sr">12–14. oktobar 2026.</span></p>
+            <div class="program-copy">
+              <h3 class="program-artist"><span class="lang lang-en">Novi Sad Baroque Academy</span><span class="lang lang-sr">Novosadska barokna akademija</span></h3>
+              <p class="program-title lang-block"><span class="lang lang-en">Masterclasses and final programme</span><span class="lang lang-sr">Majstorski kursevi i završni program</span></p>
+            </div>
+            <p class="program-location lang-block"><span class="lang lang-en">Venue: to be announced</span><span class="lang lang-sr">Lokacija: biće objavljena</span></p>
+          </article>
+        </div>
+
+        <div class="year-block">
+          <h3 class="year-title"><span class="lang lang-en">Academy lecturers · 12–14 October</span><span class="lang lang-sr">Predavači Akademije · 12–14. oktobar</span></h3>
+          <ul class="concert-list artists-list lang-block">
+            <span class="lang lang-en">
+              <li>Meila Tomé - historical flutes and recorders</li>
+              <li>Radoslava Vorgić Žuržovan - vocal technique</li>
+              <li>Rafael Arjona Ruz - vihuela and baroque guitar</li>
+              <li>Bojana Dimković - harpsichord</li>
+            </span>
+            <span class="lang lang-sr">
+              <li>Meila Tomé - istorijske flaute i blok-flaute</li>
+              <li>Radoslava Vorgić Žuržovan - vokalna tehnika</li>
+              <li>Rafael Arjona Ruz - vihuela i barokna gitara</li>
+              <li>Bojana Dimković - čembalo</li>
+            </span>
+          </ul>
+        </div>
+
+        <div class="year-block">
+          <h3 class="year-title"><span class="lang lang-en">Artists 2026</span><span class="lang lang-sr">Umetnici 2026</span></h3>
+          <ul class="concert-list artists-list">
+            <li>New Trinity Baroque</li>
+            <li>Beogradska barokna akademija</li>
+            <li>Predrag Gosta</li>
+            <li>Gli Schiavoni - <span class="lang lang-en">Croatia</span><span class="lang lang-sr">Hrvatska</span></li>
+            <li>Rafael Arjona Ruz - <span class="lang lang-en">Spain</span><span class="lang lang-sr">Španija</span></li>
+            <li>Musica Antiqua Neoplantensis</li>
+            <li>Meila Tomé</li>
+            <li>Radoslava Vorgić Žuržovan</li>
+            <li>Bojana Dimković</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -790,9 +1379,8 @@ a:hover {
   <a href="https://www.instagram.com/danibaroknemuzike/" target="_blank">Instagram</a>
 </p>
             <p style="margin-top: 10px;">
-              Festival organiser:<br />
-              Vojvodina Early Music Association (VEMA)<br />
-              Novi Sad, Serbia
+              The Days of Baroque Music in Novi Sad festival is organised by
+              <a href="https://vema.org.rs" target="_blank" rel="noopener noreferrer">VEMA - Vojvodina Early Music Association</a>.
             </p>
           </span>
 
@@ -804,15 +1392,50 @@ a:hover {
   <a href="https://www.instagram.com/danibaroknemuzike/" target="_blank">Instagram</a>
 </p>
             <p style="margin-top: 10px;">
-              Organizator festivala:<br />
-              Vojvođansko udruženje za ranu muziku (VEMA)<br />
-              Novi Sad, Srbija
+              Festival Dani barokne muzike u Novom Sadu organizuje
+              <a href="https://vema.org.rs" target="_blank" rel="noopener noreferrer">VEMA – Vojvođansko udruženje za ranu muziku</a>.
             </p>
           </span>
         </div>
       </div>
     </section>
 </main>
+
+  <!-- TODO: Replace each typographic partner mark with the supplied official logo asset when available. -->
+  <section class="partner-section" aria-labelledby="partners-title">
+    <div class="section-inner">
+      <h2 id="partners-title" class="section-title">
+        <span class="lang lang-en">Partners &amp; Friends of the Festival</span>
+        <span class="lang lang-sr">Partneri i prijatelji festivala</span>
+      </h2>
+      <div class="partner-belt">
+        <div class="partner-track">
+          <div class="partner-set">
+            <span class="partner-mark"><strong>VEMA</strong></span>
+            <span class="partner-mark"><strong>M.A.N.</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">Belgrade Early Music Festival</span><span class="lang lang-sr">Beogradski festival rane muzike</span></span>
+            <span class="partner-mark"><span class="lang lang-en">Museum of Vojvodina</span><span class="lang lang-sr">Muzej Vojvodine</span></span>
+            <span class="partner-mark"><strong>SKC Novi Sad</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">Embassy of Spain in Serbia</span><span class="lang lang-sr">Ambasada Španije u Srbiji</span></span>
+            <span class="partner-mark"><strong>AC/E · PICE</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">City of Novi Sad</span><span class="lang lang-sr">Grad Novi Sad</span></span>
+            <span class="partner-mark"><strong>Dnevnik</strong></span>
+          </div>
+          <div class="partner-set" aria-hidden="true">
+            <span class="partner-mark"><strong>VEMA</strong></span>
+            <span class="partner-mark"><strong>M.A.N.</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">Belgrade Early Music Festival</span><span class="lang lang-sr">Beogradski festival rane muzike</span></span>
+            <span class="partner-mark"><span class="lang lang-en">Museum of Vojvodina</span><span class="lang lang-sr">Muzej Vojvodine</span></span>
+            <span class="partner-mark"><strong>SKC Novi Sad</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">Embassy of Spain in Serbia</span><span class="lang lang-sr">Ambasada Španije u Srbiji</span></span>
+            <span class="partner-mark"><strong>AC/E · PICE</strong></span>
+            <span class="partner-mark"><span class="lang lang-en">City of Novi Sad</span><span class="lang lang-sr">Grad Novi Sad</span></span>
+            <span class="partner-mark"><strong>Dnevnik</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Petrovaradin bridge strip -->
   <section class="footer-photo">
