@@ -105,9 +105,25 @@
 
     function showImage() {
       media.classList.add("is-loaded");
+      media.classList.remove("is-missing");
+      image.removeAttribute("aria-hidden");
     }
 
-    if (image.complete && image.naturalWidth > 0) showImage();
+    function showPlaceholder() {
+      media.classList.remove("is-loaded");
+      media.classList.add("is-missing");
+      image.setAttribute("aria-hidden", "true");
+    }
+
+    function updateImageState() {
+      if (image.complete && image.naturalWidth > 0) showImage();
+      else if (image.complete) showPlaceholder();
+    }
+
+    updateImageState();
+
     image.addEventListener("load", showImage);
+    image.addEventListener("error", showPlaceholder);
+    window.addEventListener("load", updateImageState, { once: true });
   });
 })();

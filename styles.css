@@ -144,6 +144,110 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .share-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .share-button { border: 1px solid rgba(176, 141, 67, 0.25); background: transparent; color: inherit; padding: 10px 12px; cursor: pointer; }
 .muted-note { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.detail-subtitle {
+  margin-bottom: 4px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.detail-card-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.detail-card {
+  border: 1px solid var(--line);
+  background: rgba(255, 253, 249, 0.78);
+  padding: 20px;
+}
+.detail-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.detail-card p + p { margin-top: 10px; }
+.detail-list-strong {
+  display: grid;
+  gap: 10px;
+}
+.detail-list-strong p {
+  padding-left: 16px;
+  border-left: 1px solid var(--line);
+}
+.program-list {
+  display: grid;
+  gap: 12px;
+}
+.program-list p {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.62);
+}
+.artist-stack {
+  display: grid;
+  gap: 14px;
+}
+.artist-entry {
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.64);
+}
+.artist-entry h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.artist-role {
+  margin: 8px 0 10px;
+  color: var(--gold);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.material-card {
+  min-height: 100%;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.68);
+}
+.material-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+.material-card p { margin-top: 10px; }
+.photo-strip {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.photo-placeholder-card {
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  border: 1px dashed var(--line);
+  background:
+    linear-gradient(135deg, rgba(156, 121, 54, 0.08), transparent 56%),
+    #fbf7ef;
+  text-align: center;
+  color: var(--muted);
+}
+.photo-placeholder-card span {
+  max-width: 12rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
 
 .footer { background: #111111; color: var(--surface); border-top: 1px solid rgba(214, 188, 122, 0.18); }
 .footer-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; padding: 42px 0 28px; }
@@ -155,6 +259,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 @media (max-width: 1040px) {
   .program-grid, .stats-grid, .archive-grid, .partner-grid, .content-grid, .footer-grid, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-grid, .detail-hero-grid, .detail-layout, .split { grid-template-columns: 1fr; }
+  .materials-grid, .photo-strip, .detail-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-art { min-height: auto; }
   .hero-poster { width: min(100%, 560px); margin: 0 auto; }
   .hero-note { position: static; margin-top: 18px; max-width: none; }
@@ -177,6 +282,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
   .brand-kicker { font-size: 0.66rem; letter-spacing: 0.22em; }
   .display { font-size: clamp(2.5rem, 12vw, 4rem); }
   .program-grid, .stats-grid, .archive-grid, .partner-grid, .content-grid, .footer-grid, .gallery { grid-template-columns: 1fr; }
+  .materials-grid, .photo-strip, .detail-card-grid { grid-template-columns: 1fr; }
   .program-card { grid-template-rows: 200px auto; }
   .card-actions, .cta-row, .share-row, .anchor-nav { flex-direction: column; align-items: stretch; }
   .button, .button-secondary, .button-subtle { width: 100%; }
@@ -296,52 +402,87 @@ body { background: var(--surface); }
   max-height: 560px;
   object-fit: contain;
 }
-.program-grid { gap: 26px 22px; }
-.program-card {
-  grid-template-rows: 236px auto;
+.homepage-program-section .program-grid { gap: 26px 22px; align-items: stretch; }
+.homepage-program-section .program-card {
+  grid-template-rows: auto 1fr;
   border-color: rgba(156, 121, 54, 0.46);
   box-shadow: none;
 }
-.event-media {
+.homepage-program-section .event-media {
   position: relative;
-  display: grid;
-  place-items: center;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background: #f0e8da;
+  background:
+    linear-gradient(135deg, rgba(156, 121, 54, 0.08), transparent 56%),
+    repeating-linear-gradient(90deg, transparent 0 28px, rgba(156, 121, 54, 0.08) 29px 30px),
+    #f1e8d8;
 }
-.event-media::before,
-.event-media::after {
+.homepage-program-section .event-media[data-image-slot="ariodante-2026"] {
+  background-image: url("/assets/2026/programme/ariodante-2026.jpeg");
+}
+.homepage-program-section .event-media[data-image-slot="gli-schiavoni-2026"] {
+  background-image: url("/assets/2026/programme/gli-schiavoni-2026.jpeg");
+}
+.homepage-program-section .event-media[data-image-slot="rafael-arjona-2026"] {
+  background-image: url("/assets/2026/programme/rafael-arjona-2026.jpg");
+  background-position: 68% 60%;
+}
+.homepage-program-section .event-media[data-image-slot="barok-za-najmladje-2026"] {
+  background-image: url("/assets/2026/programme/barok-za-najmladje-2026.jpg");
+}
+.homepage-program-section .event-media[data-image-slot="musica-antiqua-neoplantensis-2026"] {
+  background-image: url("/assets/2026/programme/musica-antiqua-neoplantensis-2026.jpg");
+}
+.homepage-program-section .event-media[data-image-slot="novosadska-barokna-akademija-2026"] {
+  background-image: url("/assets/2026/programme/novosadska-barokna-akademija-2026.jpg");
+}
+.homepage-program-section .event-media[data-image-slot] {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.homepage-program-section .event-media::before,
+.homepage-program-section .event-media::after {
   content: "";
   position: absolute;
   width: 50px;
   height: 50px;
   border-color: rgba(156, 121, 54, 0.32);
   pointer-events: none;
+  z-index: 1;
 }
-.event-media::before { top: 18px; left: 18px; border-top: 1px solid; border-left: 1px solid; }
-.event-media::after { right: 18px; bottom: 18px; border-right: 1px solid; border-bottom: 1px solid; }
-.event-media img {
+.homepage-program-section .event-media::before { top: 18px; left: 18px; border-top: 1px solid; border-left: 1px solid; }
+.homepage-program-section .event-media::after { right: 18px; bottom: 18px; border-right: 1px solid; border-bottom: 1px solid; }
+.homepage-program-section .event-media img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
-.event-image-message {
-  position: relative;
-  z-index: 1;
-  color: var(--gold);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+
+.homepage-program-section .event-media[data-image-slot="rafael-arjona-2026"] img {
+  object-position: 68% 60%;
 }
-.event-media.is-loaded::before,
-.event-media.is-loaded::after,
-.event-media.is-loaded .event-image-message { display: none; }
-.card-body { min-height: 100%; }
-.card-actions { margin-top: auto; }
+.homepage-program-section .event-media.is-loaded {
+  background: #f0e8da;
+}
+.homepage-program-section .event-media.is-loaded img {
+  opacity: 1;
+}
+.homepage-program-section .event-media.is-loaded::before,
+.homepage-program-section .event-media.is-loaded::after {
+  display: none;
+}
+.homepage-program-section .card-body {
+  min-height: 100%;
+  grid-template-rows: auto auto auto 1fr;
+}
+.homepage-program-section .card-actions { margin-top: auto; }
 .event-location { position: relative; padding-left: 16px; }
 .event-location::before {
   content: "";
@@ -356,11 +497,12 @@ body { background: var(--surface); }
 
 @media (max-width: 1040px) {
   .hero-promo { min-height: 300px; }
+  .homepage-program-section .program-card { grid-template-rows: auto 1fr; }
 }
 
 @media (max-width: 680px) {
   .hero-promo { min-height: 220px; }
-  .program-card { grid-template-rows: 210px auto; }
+  .homepage-program-section .event-media { aspect-ratio: 4 / 3; }
 }
 
 /* White site canvas requested for the 2026 edition. */
