@@ -419,13 +419,13 @@ body { background: var(--surface); }
     #f1e8d8;
 }
 .homepage-program-section .event-media[data-image-slot="ariodante-2026"] {
-  background-image: url("/assets/2026/programme/ariodante-2026.jpeg");
+  background-image: url("assets/2026/programme/ariodante-2026.jpeg");
 }
 .homepage-program-section .event-media[data-image-slot="gli-schiavoni-2026"] {
-  background-image: url("/assets/2026/programme/gli-schiavoni-2026.jpeg");
+  background-image: url("assets/2026/programme/gli-schiavoni-2026.jpeg");
 }
 .homepage-program-section .event-media[data-image-slot="rafael-arjona-2026"] {
-  background-image: url("/assets/2026/programme/rafael-arjona-2026.jpg");
+  background-image: url("assets/2026/programme/rafael-arjona-2026.jpg");
   background-position: 68% 60%;
 }
 .homepage-program-section .event-media[data-image-slot="barok-za-najmladje-2026"] {
