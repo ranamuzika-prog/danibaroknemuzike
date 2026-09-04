@@ -432,7 +432,7 @@ body { background: var(--surface); }
   background-image: url("/assets/2026/programme/barok-za-najmladje.png");
 }
 .homepage-program-section .event-media[data-image-slot="musica-antiqua-neoplantensis-2026"] {
-  background-image: url("/assets/2026/programme/musica-antiqua-neoplantensis-2026.jpg");
+  background-image: url("assets/2026/programme/musica-antiqua-neoplantensis-2026.png");
 }
 .homepage-program-section .event-media[data-image-slot="novosadska-barokna-akademija-2026"] {
   background-image: url("/assets/2026/programme/novosadska-barokna-akademija-2026.jpg");
