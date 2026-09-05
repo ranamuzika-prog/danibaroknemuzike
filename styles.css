@@ -109,6 +109,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .badge.green { background: rgba(81, 104, 68, 0.22); color: #d6edc8; border: 1px solid rgba(136, 179, 112, 0.28); }
 .badge.neutral { background: rgba(176, 141, 67, 0.14); color: #776137; border: 1px solid rgba(176, 141, 67, 0.2); }
 .card-title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; line-height: 0.96; }
+.ensemble-country { display: inline-block; margin-left: 0.18em; color: var(--muted); font-size: 0.5em; font-weight: 500; letter-spacing: 0.02em; vertical-align: middle; white-space: nowrap; }
 .card-subtitle { color: inherit; font-size: 1.06rem; line-height: 1.45; }
 .card-meta, .detail-list, .mini-list { display: grid; gap: 6px; color: var(--muted); font-size: 0.96rem; line-height: 1.55; }
 .program-card:not(.light) .card-subtitle, .program-card:not(.light) .card-meta { color: rgba(243, 238, 228, 0.8); }
