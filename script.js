@@ -93,6 +93,7 @@
     });
 
     card.addEventListener("keydown", function (event) {
+      if (event.target.closest("a, button")) return;
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
       window.location.href = href;

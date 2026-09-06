@@ -126,6 +126,11 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .stats-grid, .archive-grid, .partner-grid, .content-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .stat-card h3, .archive-card h3, .partner-card h3, .content-card h3, .info-panel h3, .editorial-box h3, .ticket-box h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.75rem; line-height: 1; }
 .stat-card p, .archive-card p, .partner-card p, .content-card p { margin-top: 12px; color: var(--muted); line-height: 1.65; }
+.partner-logo-gallery { gap: 48px 56px; margin-top: 40px; margin-bottom: 32px; }
+.partner-logo-item { min-width: 0; display: grid; grid-template-rows: 160px auto; gap: 16px; align-items: center; justify-items: center; text-align: center; }
+.partner-logo-item img { display: block; width: 100%; max-width: 320px; height: 160px; object-fit: contain; }
+.partner-logo-item p { margin: 0; color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
+.partner-logo-item .partner-logo-belgrade { max-height: 100px; }
 .archive-card .button-subtle, .content-card .button-subtle { margin-top: 18px; }
 .gallery { margin-top: 26px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .gallery img { width: 100%; height: 210px; object-fit: cover; }
@@ -240,6 +245,11 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .artist-entry p { line-height: 1.72; }
 .artist-entry p + p { margin-top: 12px; }
 .artist-entry .artist-role + p { margin-top: 0; }
+.mentor-biographies { max-width: 48rem; }
+.academy-application { max-width: 48rem; }
+.application-areas { padding-left: 1.25em; }
+.application-areas li + li { margin-top: 6px; }
+.application-areas li::marker { color: var(--gold); }
 .artist-role {
   margin: 8px 0 10px;
   color: var(--gold);
