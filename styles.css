@@ -124,7 +124,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .editorial-box { background: #f8f2e8; }
 .ticket-box { background: #171717; color: var(--surface); }
 .ticket-box p, .info-panel p { line-height: 1.65; }
-.stats-grid, .archive-grid, .partner-grid, .content-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.stats-grid, .archive-grid, .partner-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .stat-card h3, .archive-card h3, .partner-card h3, .content-card h3, .info-panel h3, .editorial-box h3, .ticket-box h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.75rem; line-height: 1; }
 .stat-card p, .archive-card p, .partner-card p, .content-card p { margin-top: 12px; color: var(--muted); line-height: 1.65; }
 .partner-logo-gallery { gap: 48px 56px; margin-top: 40px; margin-bottom: 32px; }
@@ -136,7 +136,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 @media (max-width: 680px) {
   .partner-logo-item img.partner-logo-dnevnik { width: 100px; }
 }
-.archive-card .button-subtle, .content-card .button-subtle { margin-top: 18px; }
+.archive-card .button-subtle { margin-top: 18px; }
 .gallery { margin-top: 26px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .gallery img { width: 100%; height: 210px; object-fit: cover; }
 .concert-gallery { grid-template-columns: minmax(0, 560px); }
@@ -320,7 +320,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 }
 
 @media (max-width: 1040px) {
-  .program-grid, .stats-grid, .archive-grid, .partner-grid, .content-grid, .footer-grid, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .program-grid, .stats-grid, .archive-grid, .partner-grid, .footer-grid, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .detail-hero-grid > .rafael-hero-image { min-height: 0; height: clamp(320px, 52vw, 480px); align-self: start; }
   .concert-gallery-portraits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-grid, .detail-hero-grid, .detail-layout, .split { grid-template-columns: 1fr; }
@@ -346,7 +346,7 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
   .brand-name { font-size: 1.25rem; }
   .brand-kicker { font-size: 0.66rem; letter-spacing: 0.22em; }
   .display { font-size: clamp(2.5rem, 12vw, 4rem); }
-  .program-grid, .stats-grid, .archive-grid, .partner-grid, .content-grid, .footer-grid, .gallery { grid-template-columns: 1fr; }
+  .program-grid, .stats-grid, .archive-grid, .partner-grid, .footer-grid, .gallery { grid-template-columns: 1fr; }
   .composer-list { grid-template-columns: 1fr; }
   .composer-list li:nth-child(odd) { border-right: 0; }
   .composer-list-editorial { grid-template-columns: 1fr; gap: 4px; }
@@ -614,3 +614,17 @@ body,
 
 /* Keep the festival mark in the header without the adjacent text block. */
 .brand-copy { display: none; }
+
+/* Festival team and the About navigation submenu. */
+.nav-about { position: relative; }
+.nav-about-menu > summary { cursor: pointer; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-about-menu > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+.nav-submenu { position: absolute; top: calc(100% + 14px); right: 0; min-width: 240px; display: grid; gap: 18px; list-style: none; padding: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.nav-submenu a { display: block; }
+.festival-team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 24px; margin-block: 32px; }
+.festival-team-grid h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2rem; line-height: 1.15; overflow-wrap: anywhere; }
+@media (max-width: 860px) {
+  .nav-submenu { position: static; min-width: 0; margin-top: 16px; padding: 0 0 0 18px; border: 0; box-shadow: none; background: transparent; }
+  .nav-panel { max-height: calc(100dvh - 84px); overflow-y: auto; }
+  .festival-team-grid { grid-template-columns: 1fr; }
+}
