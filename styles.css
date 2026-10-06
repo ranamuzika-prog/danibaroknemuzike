@@ -276,6 +276,26 @@ html[data-lang="sr"] .lang-sr.lang-block, html[data-lang="en"] .lang-en.lang-blo
 .application-areas { padding-left: 1.25em; }
 .application-areas li + li { margin-top: 6px; }
 .application-areas li::marker { color: var(--gold); }
+.academy-registration-notice {
+  padding: 14px 18px;
+  border-left: 4px solid var(--red);
+  background: #fff4ef;
+  color: var(--text);
+  line-height: 1.5;
+}
+.academy-registration-closed {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 8px;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  background: #fff4ef;
+  color: var(--red);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: middle;
+}
 .artist-role {
   margin: 8px 0 10px;
   color: var(--gold);
